@@ -1,0 +1,209 @@
+<div class="content" role="main">
+    <div>
+        <mat-card>
+            <mat-card-title>Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)</mat-card-title>
+
+            <mat-card-content>
+
+                <mat-horizontal-stepper [linear]="true" #stepper>
+                    <mat-step [stepControl]="firstFormGroup">
+                        <div class="info">
+                            <a href="https://www.youtube.com/watch?v=Q4UA8oate_I">https://www.youtube.com/watch?v=Q4UA8oate_I</a>
+                            <p>
+                                We appreciate your contact, check that you do not need to fill out the full form if already has this information 
+                                on its linkedin, and check out the links at the end of the tutorials (developers).</p>
+                            <p>
+                                Já agradecemos o seu contato, confira que você não precisa preencher o formulário completo caso já tenha essas 
+                                informações no seu linkedin, e no final confira os links dos tutoriais (desenvolvedores).
+                            </p>
+                            <p>
+                                How we work / Como trabalhamos: <a href="https://docs.google.com/document/d/145QuJ8-efr-pmNGV-2DOOGHD-1dc3MERSeL5g0XoqmM">
+                                    https://docs.google.com/document/d/145QuJ8-efr-pmNGV-2DOOGHD-1dc3MERSeL5g0XoqmM</a>
+                            </p>
+                            <p class="red">*Obrigatório</p>
+                        </div>
+                        <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel>Email</ng-template>
+                            <mat-form-field>
+                                <mat-label>Endereço de e-mail</mat-label>
+                                <input matInput placeholder="Seu email" formControlName="emailCtrl" required>
+                            </mat-form-field>
+                            <div>
+                                <button mat-button matStepperNext>Próxima</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup">
+                      <form [formGroup]="secondFormGroup">
+
+                        <div class="info">
+                            <h2>Occupation area /Área de atuação</h2>
+                            <p>
+                                If you are a developer or DBA, continue filling out this form / Se você atua como desenvolvedor ou DBA, 
+                                continue o preenchimento deste formulário
+                            </p>
+                            <p>
+                                If you act as a designer, fill out the form available at / Se você atua como designer, preencha ao formulário disponível em
+                                <a href="https://goo.gl/forms/UJl8Oa91ubN3HRUm1">https://goo.gl/forms/UJl8Oa91ubN3HRUm1</a>
+                            </p>
+                            <p>
+                                If you work in the administrative, customer service or commercial area, fill out the form available at / 
+                                Se você atua na área administrativa, atendimento ao cliente ou comercial, preencha ao formulário disponível
+                                 em  <a href="https://goo.gl/forms/0M99jjUwnIAw0flJ2">https://goo.gl/forms/0M99jjUwnIAw0flJ2</a>
+                            </p>
+                            <p class="red">*Obrigatório</p>
+                        </div>
+
+                        <ng-template matStepLabel>Dados</ng-template>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Nome/Name:</mat-label>
+                                <input matInput formControlName="nameCtrl" placeholder="Seu nome" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Skype: ( please create an account if you don't have yet / bom criar caso não tenha) </mat-label>
+                                <input matInput formControlName="skypeCtrl" placeholder="Seu Skype" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Telefone/Phone (Whatsapp):</mat-label>
+                                <input matInput formControlName="phoneCtrl" placeholder="Seu telefone" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Linkedin:</mat-label>
+                                <input matInput formControlName="linkedinCtrl" placeholder="Seu Linkedin">
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Cidade / City:</mat-label>
+                                <input matInput formControlName="cityCtrl" placeholder="Sua cidade" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Estado / State:</mat-label>
+                                <input matInput formControlName="stateCtrl" placeholder="Seu estado" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Portfolio:</mat-label>
+                                <input matInput formControlName="portfolioCtrl" placeholder="Seu portfolio">
+                            </mat-form-field>
+                        </div>
+                        <div class="row" *ngIf="workingTime.controls.length > 0">
+                            <h3>What is your willingness to work today? / Qual é sua disponibilidade para trabalhar hoje?</h3>
+
+                            <ng-container formArrayName="workingTime">
+                                <div *ngFor="let wt of workingTimeList; let i = index">
+                                  <mat-checkbox [formControlName]="i">
+                                    {{wt.description}}
+                                  </mat-checkbox>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="row" *ngIf="bestTime.controls.length > 0">
+                            <h3>What's the best time to work for you? / Pra você qual é o melhor horário para trabalhar?</h3>
+
+                            <ng-container formArrayName="bestTime">
+                                <div *ngFor="let bt of bestTimeList; let i = index">
+                                  <mat-checkbox [formControlName]="i">
+                                    {{bt.description}}
+                                    {{bestTime.controls[i].value}}
+                                  </mat-checkbox>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>What is your hourly salary requirements? / Qual sua pretensão salarial por hora?</mat-label>
+                                <input matInput formControlName="salaryRequirementsCtrl" placeholder="Sua pretensão" required>
+                            </mat-form-field>
+                        </div>
+                    
+                        <div>
+                          <button mat-button matStepperPrevious>Anterior</button>
+                          <button mat-button matStepperNext>Próxima</button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step [stepControl]="thirdFormGroup">
+                      <ng-template matStepLabel>Knowledge / Conhecimentos</ng-template>
+                        <div class="info">
+                            <h3>Knowledge / Conhecimentos</h3>
+                            <p>
+                                Rate yourself from 0 to 5 for the knowledge specified below, and that's okay if you do not know many 
+                                things, the important thing is to be honest! / Avalie-se de 0 a 5 quanto aos conhecimentos especificados 
+                                abaixo, e tudo bem se não souber de muitas coisas, o importante é que seja sincero!
+                            </p>
+
+                            <p class="red">*Obrigatório</p>
+                        </div>
+                        <form [formGroup]="thirdFormGroup">
+                            <div class="row" *ngIf="knowledges.controls.length > 0">
+                                <ng-container formArrayName="knowledge">
+                                    <div *ngFor="let kn of knowledges.controls; index as i" class="row">
+                                        <ng-container [formGroupName]="i">
+                                            <h3>{{kn.get('description')?.value}} *</h3>
+                                            <mat-radio-group formControlName="rate">
+                                                <mat-radio-button value="0" style="padding-right: 10px">0</mat-radio-button>
+                                                <mat-radio-button value="1" style="padding-right: 10px">1</mat-radio-button>
+                                                <mat-radio-button value="2" style="padding-right: 10px">2</mat-radio-button>
+                                                <mat-radio-button value="3" style="padding-right: 10px">3</mat-radio-button>
+                                                <mat-radio-button value="4" style="padding-right: 10px">4</mat-radio-button>
+                                                <mat-radio-button value="5" style="padding-right: 10px">5</mat-radio-button>
+                                            </mat-radio-group>
+                                            </ng-container>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <div class="row">
+                                <p>Do you know any other language or framework that was not listed above? Tell us and evaluate yourself 
+                                    from 0 to 5. / Conhece mais alguma linguagem ou framework que não foi listado aqui em cima? Conte 
+                                    para nos e se auto avalie ainda de 0 a 5.</p>
+                                <mat-form-field>
+                                    <input matInput formControlName="extraKnowledgeCtrl" placeholder="Conhecimentos extras">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="row">
+                                <p>Enter the link here CRUD (create, update, delete)- read information in the welcome document quoted in 
+                                    the form description./ Insira aqui o link do CRUD (create, update, delete)- ler informações no
+                                     documento de Boas Vindas citado na descrição do formulário.</p>
+                            </div>
+
+                            <div class="row">
+                                <p>Tutorials - Check out our tutorials and material explaining how the company works / Confira nossos tutoriais e material explicando como a empresa funciona
+                                    <a href="https://docs.google.com/document/d/145QuJ8-efr-pmNGV-2DOOGHD-1dc3MERSeL5g0XoqmM">https://docs.google.com/document/d/145QuJ8-efr-pmNGV-2DOOGHD-1dc3MERSeL5g0XoqmM</a></p>
+                            </div>
+
+                            <div class="row">
+                                <mat-form-field>
+                                    <mat-label>Link CRUD:</mat-label>
+                                    <input matInput formControlName="crudLinkCtrl" placeholder="Link CRUD">
+                                </mat-form-field>
+                            </div>
+                            <div class="row" *ngIf="isNew === false">
+                                <mat-form-field>
+                                    <mat-label>CRUD Rating / Nota do CRUD</mat-label>
+                                    <input matInput formControlName="crudRatingCtrl" placeholder="Nota">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <button mat-button matStepperPrevious>Anterior</button>                               
+                                <button mat-button (click)="save()" [disabled]="!canSave">Enviar</button>
+                              </div>
+                        </form>
+                      
+                    </mat-step>
+                  </mat-horizontal-stepper>
+            </mat-card-content>
+        </mat-card>  
+    </div>
+</div>

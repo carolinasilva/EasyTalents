@@ -1,0 +1,8 @@
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\bin\Debug\netcoreapp3.0\EasyTalents.Domain.deps.json
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\bin\Debug\netcoreapp3.0\EasyTalents.Domain.dll
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\bin\Debug\netcoreapp3.0\EasyTalents.Domain.pdb
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\obj\Debug\netcoreapp3.0\EasyTalents.Domain.csprojAssemblyReference.cache
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\obj\Debug\netcoreapp3.0\EasyTalents.Domain.AssemblyInfoInputs.cache
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\obj\Debug\netcoreapp3.0\EasyTalents.Domain.AssemblyInfo.cs
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\obj\Debug\netcoreapp3.0\EasyTalents.Domain.dll
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.ApplicationCore\obj\Debug\netcoreapp3.0\EasyTalents.Domain.pdb

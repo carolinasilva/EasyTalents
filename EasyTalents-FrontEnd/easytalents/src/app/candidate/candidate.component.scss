@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    margin: 15px 0px;
+}
+
+.red {
+    color: red;
+}
+
+.info {
+    margin: 20px 0px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-radio-label-content {
+    padding-left: 5px !important;
+    padding-right: 10px !important;
+}

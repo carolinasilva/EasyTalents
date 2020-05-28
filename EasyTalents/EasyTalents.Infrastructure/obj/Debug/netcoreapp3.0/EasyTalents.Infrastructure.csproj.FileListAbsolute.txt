@@ -1,0 +1,4 @@
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.Infrastructure\bin\Debug\netcoreapp3.0\EasyTalents.Infrastructure.deps.json
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.Infrastructure\bin\Debug\netcoreapp3.0\EasyTalents.Infrastructure.dll
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.Infrastructure\obj\Debug\netcoreapp3.0\EasyTalents.Infrastructure.AssemblyInfoInputs.cache
+D:\Carolina\EasyTalents\EasyTalents\EasyTalents.Infrastructure\obj\Debug\netcoreapp3.0\EasyTalents.Infrastructure.AssemblyInfo.cs
